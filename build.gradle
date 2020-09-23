@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.akurus'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok:1.18.12'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation("org.eclipse.jetty:jetty-servlet:9.4.31.v20200723")
+}
+
+test {
+	useJUnitPlatform()
+}
